@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>parati, bella</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000;
+      overflow: hidden;
+    }
+    img {
+      width: 375px;  /* Ancho fijo */
+      height: 667px; /* Alto fijo */
+      object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <img id="image" src="imagen1.jpg" alt="Imagen 1">
+
+  <script>
+    const image = document.getElementById('image');
+
+    // Rutas de las imágenes
+    const images = [
+      'imagen1.jpg', // Cambia a la ruta de tu primera imagen
+      'imagen2.jpg', // Cambia a la ruta de tu segunda imagen
+      'imagen3.jpg', // Cambia a la ruta de tu tercera imagen
+      'imagen4.jpg'  // Cambia a la ruta de tu cuarta imagen
+    ];
+
+    let currentIndex = 0; // Índice de la imagen actual
+
+    // Evento de clic para cambiar entre imágenes
+    image.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length; // Incrementa el índice y vuelve al inicio si llega al final
+      image.src = images[currentIndex]; // Cambia la fuente de la imagen
+    });
+  </script>
+</body>
+</html>
